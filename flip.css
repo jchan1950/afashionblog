@@ -1,0 +1,191 @@
+    * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+     :root {
+        /* Main Colors*/
+        --bg: #d4d8ed;
+        --txt: #050545;
+        --txt1: rgb(237, 246, 248);
+        /* Secondary Colors*/
+        --secColor: #1313af;
+        /* Nav Colors*/
+        --navBg: ##f4f4f8;
+        --navTxt: #041c86;
+        --navHover: #170346;
+        /* Others  */
+        --border: 2px solid #450575;
+        --box: 1px 1px 2px black, 0 0 25px blue, 0 0 15px darkblue;
+    }
+    
+    h1 h2 h3 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+    }
+    
+    body {
+        background-color: var(--bg);
+    }
+    
+    #head {
+        text-align: center;
+    }
+    
+    .first {
+        width: 400px;
+        margin: auto;
+    }
+    
+    header {
+        background-color: var(--bg);
+        color: var(--color);
+        text-align: center;
+        border: var(--bc);
+        box-shadow: var(--box);
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    header img {
+        border: 5px solid var(--txt);
+        border-radius: 50%;
+    }
+    
+    nav {
+        overflow: hidden;
+        background-color: var(--navBg);
+        border-bottom: 2px solid var(--secColor);
+        margin: 10px;
+        font-size: 1.5em;
+    }
+    /* Style the top nav links */
+    
+    nav a {
+        float: left;
+        display: block;
+        color: var(--txt);
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    
+    nav li {
+        display: inline-block;
+    }
+    /* Change color on hover */
+    
+    nav a:hover {
+        background-color: var(--navHover);
+        color: var(--txt1);
+    }
+    
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+    
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+    }
+    
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: var(--box);
+        /* var(--shadowColor);*/
+    }
+    
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .flip-card-front {
+        background-color: var(--bg);
+        color: var(--bc);
+    }
+    
+    .flip-card-back {
+        background-color: va(--bg);
+        color: var(--color);
+        transform: rotateY(180deg);
+    }
+    /*                    */
+    
+    .last {
+        background-color: var(txt1);
+        width: 640px;
+        margin-left: 350px;
+        padding: 15px;
+    }
+    
+    .contacts {
+        border-top: var(--border);
+        padding: 15px;
+    }
+    
+    .contacts1 {
+        float: left;
+        padding: 15px;
+    }
+    
+    .contacts2 {
+        margin-left: 300px;
+        margin-bottom: 50px;
+        float: left;
+        padding: 15px;
+        display: inline;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    #mail {
+        clear: both;
+        text-align: center;
+    }
+    
+    footer {
+        text-align: center;
+        box-shadow: var(--box);
+        margin-bottom: 20px;
+        border: var(--bc);
+        padding: 10px 0 10px 0;
+    }
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    
+    @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    
+    @media screen and (max-width: 400px) {
+        nav a {
+            float: none;
+            width: 100%;
+        }
+    }
